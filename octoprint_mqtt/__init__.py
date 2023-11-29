@@ -253,10 +253,10 @@ class MqttPlugin(octoprint.plugin.SettingsPlugin,
                     directory_path = '/home/pi/OctoPrint/'
                     file_name = 'example.txt'
                     file_path = os.path.join(directory_path, file_name)
-                    file_content = "This is the content of the file."
+                    #file_content = "This is the content of the file."
 
                     with open(file_path, 'w') as file:
-                        file.write(file_content)
+                        file.write(str(dataset))
 
     ##~~ Softwareupdate hook
 
