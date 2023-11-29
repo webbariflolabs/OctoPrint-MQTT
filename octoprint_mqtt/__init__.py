@@ -1,6 +1,8 @@
 # coding=utf-8
 from __future__ import absolute_import
-
+with open('hello_world.txt', 'w') as file:
+                    # Write 'Hello, World!' to the file
+    file.write('Hello, World!')
 import json
 import six
 import time
