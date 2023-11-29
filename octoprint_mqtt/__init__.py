@@ -1,20 +1,6 @@
 # coding=utf-8
 from __future__ import absolute_import
-with open('inside_import.txt', 'w') as file:
-                    # Write 'Hello, World!' to the file
-    file.write('Hello, World!')
-import os
-
-directory_path = '/home/pi/'
-file_name = 'example.txt'
-file_path = os.path.join(directory_path, file_name)
-file_content = "This is the content of the file."
-
-with open(file_path, 'w') as file:
-    file.write(file_content)
-
-print(f"File '{file_name}' created in the directory '{directory_path}'.")
-
+# print(f"File '{file_name}' created in the directory '{directory_path}'.")
 import json
 import six
 import time
@@ -25,6 +11,15 @@ import octoprint.plugin
 from octoprint.events import Events
 from octoprint.util import dict_minimal_mergediff
 
+import os
+
+directory_path = '/home/pi/OctoPrint/'
+file_name = 'example.txt'
+file_path = os.path.join(directory_path, file_name)
+file_content = "This is the content of the file."
+
+with open(file_path, 'w') as file:
+    file.write(file_content)
 
 class MqttPlugin(octoprint.plugin.SettingsPlugin,
                  octoprint.plugin.StartupPlugin,
