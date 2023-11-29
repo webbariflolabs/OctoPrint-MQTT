@@ -13,14 +13,6 @@ from octoprint.util import dict_minimal_mergediff
 
 import os
 
-directory_path = '/home/pi/OctoPrint/'
-file_name = 'example.txt'
-file_path = os.path.join(directory_path, file_name)
-file_content = "This is the content of the file."
-
-with open(file_path, 'w') as file:
-    file.write(file_content)
-
 class MqttPlugin(octoprint.plugin.SettingsPlugin,
                  octoprint.plugin.StartupPlugin,
                  octoprint.plugin.ShutdownPlugin,
@@ -257,9 +249,14 @@ class MqttPlugin(octoprint.plugin.SettingsPlugin,
                                                      allow_queueing=True,
                                                      timestamp=data["time"])
                     self.lastTemp.update({key: data[key]})
-                    with open('hello_world.txt', 'w') as file:
-                    # Write 'Hello, World!' to the file
-                        file.write('Hello, World!')
+                    
+                    directory_path = '/home/pi/OctoPrint/'
+                    file_name = 'example.txt'
+                    file_path = os.path.join(directory_path, file_name)
+                    file_content = "This is the content of the file."
+
+                    with open(file_path, 'w') as file:
+                        file.write(file_content)
 
     ##~~ Softwareupdate hook
 
